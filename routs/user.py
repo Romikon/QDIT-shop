@@ -46,7 +46,7 @@ class UserRoutesController:
 
         return 'You are not Admin!'
 
-    # Rout for deleting User by admin
+    # Rout for updating User by admin
     def updateUser(self, id):
         updateUser = request.get_json()
         token = request.headers.get("token")
@@ -64,7 +64,7 @@ class UserRoutesController:
 
         return 'You are not Admin!'
 
-    # Rout for updating User by admin
+    # Rout for deleting User by admin
     def deleteUser(self, id):
         token = request.headers.get("token")
 
