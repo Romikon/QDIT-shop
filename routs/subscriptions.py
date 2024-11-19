@@ -13,7 +13,7 @@ class SubscriptionsRoutesController:
         subscriptionsRotesController.add_url_rule('/addsubscriptions/<brigadeId>', view_func=self.addSubscriptions, methods=['POST'])
         subscriptionsRotesController.add_url_rule('/deletesubscriptions/<brigadeId>', view_func=self.deleteSubscriptions, methods=['DELETE'])
 
-    # Rout for getting all Cards from DB
+    # Rout for getting all User Subscriptions from DB
     def getSubscriptions(self):
         token = request.headers.get("token")
 
@@ -24,7 +24,7 @@ class SubscriptionsRoutesController:
 
         return 'You need to log in!'
 
-    # Rout for adding new Card by User
+    # Rout for adding new Subscriptions by User
     def addSubscriptions(self, brigadeId):
         token = request.headers.get("token")
 
@@ -35,7 +35,7 @@ class SubscriptionsRoutesController:
 
         return 'You need to log in!'
 
-    # Rout for deleting User by User
+    # Rout for deleting Subscriptions by User
     def deleteSubscriptions(self, brigadeId):
         token = request.headers.get("token")
         userId = getUserIdByToken(token)
