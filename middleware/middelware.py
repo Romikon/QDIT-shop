@@ -15,6 +15,9 @@ def createToken(id, expires_delta: timedelta = timedelta(hours=1)):
     return token
 
 def getUserIdByToken(token):
+    if token == None:
+        return None
+
     try:
         tokenCheck = jwt.decode(token, os.getenv("SECRET_KEY"), algorithms=["HS256"])
     except jwt.ExpiredSignatureError:

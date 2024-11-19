@@ -1,5 +1,3 @@
-from pickle import FALSE
-
 from flask import request, Blueprint
 from middleware.middelware import getUserIdByToken
 from services.account import hashingPassword
@@ -31,7 +29,7 @@ def checkIfEntitiesAreValid(data):
 
     return True
 
-class UserRoutesController:
+class PaymentRoutesController:
     def __init__(self):
         self.Routes()
 
@@ -92,5 +90,5 @@ class UserRoutesController:
 
         return PaymentService.deleteCardByUserId(userId)
 
-UserRoutesController()
+PaymentRoutesController()
 
