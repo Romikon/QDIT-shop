@@ -1,5 +1,6 @@
 from dbconfig import cur, conn
 
+
 class PaymentService:
     # Check if User is admin
     @staticmethod

@@ -1,5 +1,6 @@
 from dbconfig import cur, conn
 
+
 class SubscriptionsService:
     # Function for getting all User Subscriptions from DB
     @staticmethod
@@ -51,5 +52,3 @@ class SubscriptionsService:
             return "Subscription deleted successfully!"
 
         return "Subscription does not exist!"
-
-

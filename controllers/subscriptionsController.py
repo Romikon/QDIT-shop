@@ -4,14 +4,17 @@ from services.subscriptions import SubscriptionsService
 
 subscriptionsRotesController = Blueprint("subscriptionsRotesController", __name__)
 
-class SubscriptionsRoutesController:
+
+class SubscriptionsController:
     def __init__(self):
         self.Routes()
 
     def Routes(self):
         subscriptionsRotesController.add_url_rule('/getsubscriptions', view_func=self.getSubscriptions, methods=['GET'])
-        subscriptionsRotesController.add_url_rule('/addsubscriptions/<brigadeId>', view_func=self.addSubscriptions, methods=['POST'])
-        subscriptionsRotesController.add_url_rule('/deletesubscriptions/<brigadeId>', view_func=self.deleteSubscriptions, methods=['DELETE'])
+        subscriptionsRotesController.add_url_rule('/addsubscriptions/<brigadeId>', view_func=self.addSubscriptions,
+                                                  methods=['POST'])
+        subscriptionsRotesController.add_url_rule('/deletesubscriptions/<brigadeId>',
+                                                  view_func=self.deleteSubscriptions, methods=['DELETE'])
 
     # Rout for getting all User Subscriptions from DB
     def getSubscriptions(self):
@@ -45,5 +48,5 @@ class SubscriptionsRoutesController:
 
         return 'You need to log in!'
 
-SubscriptionsRoutesController()
 
+SubscriptionsController()

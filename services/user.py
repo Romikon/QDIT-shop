@@ -4,9 +4,10 @@ class UserService:
     # Check if User is admin
     @staticmethod
     def checkUserRole(id):
+        print(id)
         cur.execute("SELECT role FROM users WHERE id = %s", (id,))
         role = cur.fetchone()
-
+        print(role)
         return role
 
     # Function for getting all Users from DB
