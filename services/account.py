@@ -4,12 +4,14 @@ import bcrypt
 
 from middleware.middelware import createToken
 
+
 # Hashing password
 def hashingPassword(password):
     bytes_password = password.encode('utf-8')
     salt = bcrypt.gensalt()
     hash = bcrypt.hashpw(bytes_password, salt)
     return hash
+
 
 # Compare two passwords
 def checkPassword(userPassword, DBpassword):
@@ -18,6 +20,7 @@ def checkPassword(userPassword, DBpassword):
     result = bcrypt.checkpw(userBytes, DBpassword)
 
     return result
+
 
 # Log in user
 def login(userToCheck):
@@ -31,6 +34,7 @@ def login(userToCheck):
             return 'Invalid login or password!'
 
     return 'Invalid login or password!'
+
 
 # authentication user
 def authentication(newUsers):

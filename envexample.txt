@@ -11,4 +11,4 @@ DB_USER_PASSWORD=
 DB_PORT=
 
 -------------------JWT-------------------
-SECRET_KEY=
+SECRET_KEY=v

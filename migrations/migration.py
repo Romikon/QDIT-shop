@@ -7,6 +7,7 @@ def dbMigrationUp():
         email VARCHAR(20),
         password VARCHAR(200),
         role VARCHAR(20) DEFAULT 'user',
+        brigadesubscriptions int ARRAY,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )""")
 
